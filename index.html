@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博烧香 - 数字修行</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="cyber-header">
+            <h1><i class="fas fa-fire-alt"></i> 赛博烧香 <span class="glitch">v1.0</span></h1>
+            <p class="subtitle">数字修行 · 云端祈福 · 算法加持</p>
+        </header>
+
+        <div class="main-content">
+            <!-- 烧香区域 -->
+            <div class="incense-area">
+                <div class="altar">
+                    <div class="incense-stick" id="incense1">
+                        <div class="stick"></div>
+                        <div class="tip active"></div>
+                        <div class="smoke"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                    <div class="incense-stick" id="incense2">
+                        <div class="stick"></div>
+                        <div class="tip"></div>
+                        <div class="smoke"></div>
+                    </div>
+                    <div class="incense-stick" id="incense3">
+                        <div class="stick"></div>
+                        <div class="tip"></div>
+                        <div class="smoke"></div>
+                    </div>
+                </div>
+                
+                <div class="incense-controls">
+                    <button id="lightAll" class="cyber-btn">
+                        <i class="fas fa-burn"></i> 一键点香
+                    </button>
+                    <button id="lightSingle" class="cyber-btn">
+                        <i class="fas fa-hand-point-up"></i> 单支点燃
+                    </button>
+                    <button id="reset" class="cyber-btn secondary">
+                        <i class="fas fa-redo"></i> 重置香火
+                    </button>
+                </div>
+            </div>
+
+            <!-- 控制面板 -->
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3><i class="fas fa-cogs"></i> 香火设置</h3>
+                    <div class="control-group">
+                        <label for="smokeAmount">烟雾密度</label>
+                        <input type="range" id="smokeAmount" min="1" max="10" value="5">
+                    </div>
+                    <div class="control-group">
+                        <label for="incenseColor">香火颜色</label>
+                        <select id="incenseColor">
+                            <option value="#ff6b35">朱砂红</option>
+                            <option value="#4ecdc4">翡翠绿</option>
+                            <option value="#45b7d1">天青蓝</option>
+                            <option value="#f9c74f">鎏金黄</option>
+                            <option value="#9d4edd">赛博紫</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3><i class="fas fa-pray"></i> 祈福语</h3>
+                    <div class="prayer-input">
+                        <textarea id="prayerText" placeholder="输入你的祈福愿望..."></textarea>
+                        <button id="sendPrayer" class="cyber-btn small">
+                            <i class="fas fa-paper-plane"></i> 发送祈福
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 状态显示 -->
+            <div class="status-panel">
+                <div class="status-item">
+                    <div class="status-label">香火状态</div>
+                    <div class="status-value" id="incenseStatus">等待点燃</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">烧香时长</div>
+                    <div class="status-value" id="burnTime">00:00:00</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">祈福次数</div>
+                    <div class="status-value" id="prayerCount">0</div>
+                </div>
+            </div>
+
+            <!-- 祈福记录 -->
+            <div class="prayer-log">
+                <h3><i class="fas fa-scroll"></i> 祈福记录</h3>
+                <div id="prayerList">
+                    <div class="log-entry">
+                        <span class="time">[系统]</span>
+                        <span class="message">欢迎来到赛博烧香，点击上方按钮开始修行</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="cyber-footer">
+            <p>赛博烧香 v1.0 · 数字修行 · 源码开源 · 
+                <a href="https://github.com/yourusername/cyber-incense" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="lightSound" src="https://assets.mixkit.co/sfx/preview/mixkit-match-ignite-1667.mp3" preload="auto"></audio>
+    <audio id="ambientSound" src="https://assets.mixkit.co/sfx/preview/mixkit-forest-ambience-1220.mp3" loop preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
